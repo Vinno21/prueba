@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller Registro-->
+        <!--View Controller Inicio-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewControllerRegistro" customModule="prueba" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewControllerInicio" customModule="prueba" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,13 +36,14 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="V7Q-7w-8zK">
                                                 <rect key="frame" x="0.0" y="41.5" width="350" height="108.5"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="500" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h5K-HB-ufI">
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="500" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Correo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h5K-HB-ufI">
                                                         <rect key="frame" x="0.0" y="0.0" width="350" height="46.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JGK-Dz-gMH">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JGK-Dz-gMH">
                                                         <rect key="frame" x="0.0" y="62.5" width="350" height="46"/>
+                                                        <accessibility key="accessibilityConfiguration" hint="Contraseña"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                                     </textField>
@@ -56,7 +57,7 @@
                                                     <color key="titleColor" red="0.13066002730000001" green="0.40586555000000002" blue="0.42367696760000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="Bkg-XW-GkZ" kind="show" identifier="prin" id="kA6-my-iqx"/>
+                                                    <action selector="btninicioSesion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="156-2x-ngF"/>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oef-4c-0EV">
@@ -108,15 +109,20 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="xdt-Bn-ANs"/>
+                    <connections>
+                        <outlet property="txtcontraUsuario" destination="JGK-Dz-gMH" id="mKK-3Q-E5d"/>
+                        <outlet property="txtcorreoUsuario" destination="h5K-HB-ufI" id="Xp9-bz-Puk"/>
+                        <segue destination="Bkg-XW-GkZ" kind="show" identifier="iniciosesion" id="1F8-ty-q1U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1088" y="88"/>
+            <point key="canvasLocation" x="1574" y="86"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller Registro-->
         <scene sceneID="0uf-ss-ckc">
             <objects>
-                <viewController id="hab-Ms-eu3" sceneMemberID="viewController">
+                <viewController id="hab-Ms-eu3" customClass="ViewControllerRegistro" customModule="prueba" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="co2-Q6-nDp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -139,20 +145,20 @@
                                                         <color key="textColor" red="0.093528873700000001" green="0.29771032990000001" blue="0.30891822410000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dvT-WG-wie">
+                                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Correo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dvT-WG-wie">
                                                         <rect key="frame" x="0.0" y="55" width="382" height="44.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3qy-WK-x5w">
+                                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3qy-WK-x5w">
                                                         <rect key="frame" x="0.0" y="109.5" width="382" height="45"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eIa-OS-oAT">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eIa-OS-oAT">
                                                         <rect key="frame" x="0.0" y="164.5" width="382" height="44.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLv-ou-jyX">
                                                         <rect key="frame" x="137" y="219" width="108" height="45"/>
@@ -161,7 +167,7 @@
                                                             <color key="titleColor" red="0.16385656600000001" green="0.492677331" blue="0.505658567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                         <connections>
-                                                            <segue destination="Bkg-XW-GkZ" kind="show" identifier="principal" id="rU9-Xc-17e"/>
+                                                            <action selector="btnregistroUsuario:" destination="hab-Ms-eu3" eventType="touchUpInside" id="Pvf-o4-gWb"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -197,10 +203,16 @@
                         <viewLayoutGuide key="safeArea" id="lWA-Oa-QWj"/>
                     </view>
                     <navigationItem key="navigationItem" id="erF-Kk-zpf"/>
+                    <connections>
+                        <outlet property="txtcontraRegis" destination="eIa-OS-oAT" id="Wqs-gC-1Aw"/>
+                        <outlet property="txtcorreoRegis" destination="dvT-WG-wie" id="xyb-Cd-qOg"/>
+                        <outlet property="txtnombreRegis" destination="3qy-WK-x5w" id="nhP-Wp-Ie0"/>
+                        <segue destination="fPY-zQ-FVj" kind="show" identifier="usuarioregistrado" id="Pr3-zF-J58"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zxr-wQ-ozq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1848" y="88"/>
+            <point key="canvasLocation" x="2589.8550724637685" y="86.383928571428569"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fdd-ay-Nzx">
@@ -216,7 +228,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v1Z-Qu-XUc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-517" y="88"/>
+            <point key="canvasLocation" x="-746" y="87"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="HTl-pB-UM2">
@@ -233,7 +245,7 @@
                                 <color key="titleColor" red="0.093528873700000001" green="0.29771032990000001" blue="0.30891822410000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
-                                <segue destination="fPY-zQ-FVj" kind="show" identifier="nuecont" id="gK1-ln-RuQ"/>
+                                <action selector="btnAgregarContacto:" destination="Bkg-XW-GkZ" eventType="touchUpInside" id="VwL-Oe-RJ1"/>
                             </connections>
                         </button>
                         <prototypes>
@@ -265,6 +277,10 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <connections>
+                                    <outlet property="txtcelularContacto" destination="2FJ-gN-ojy" id="oFQ-Mn-fo2"/>
+                                    <outlet property="txtnombreContacto" destination="bhX-Pt-pGA" id="BZ9-ae-oGj"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -274,17 +290,20 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="ZyL-eN-3zI"/>
                     <connections>
+                        <outlet property="tabla" destination="k6y-Sz-7sv" id="mYC-Km-tg2"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="Inicio" id="kDt-Q6-Jgw"/>
+                        <segue destination="fPY-zQ-FVj" kind="show" identifier="segueeditar" id="UHB-JP-iO0"/>
+                        <segue destination="fPY-zQ-FVj" kind="show" identifier="segueAgregarCon" id="92e-ru-fYA"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PtI-Bx-dor" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="301" y="89"/>
+            <point key="canvasLocation" x="299" y="86"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="J91-YK-Del">
             <objects>
-                <viewController id="fPY-zQ-FVj" sceneMemberID="viewController">
+                <viewController id="fPY-zQ-FVj" customClass="ViewController" customModule="prueba" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2ky-Fs-TvZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -299,62 +318,65 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="397.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contacto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0RC-uD-qJQ">
-                                                        <rect key="frame" x="135.5" y="0.0" width="111" height="49"/>
+                                                        <rect key="frame" x="135.5" y="0.0" width="111" height="36"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bJe-N7-29u">
-                                                        <rect key="frame" x="0.0" y="58" width="382" height="49"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre Contacto" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bJe-N7-29u">
+                                                        <rect key="frame" x="0.0" y="45" width="382" height="36.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5f5-x6-9AG">
-                                                        <rect key="frame" x="0.0" y="116" width="382" height="49"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Celular Contacto" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5f5-x6-9AG">
+                                                        <rect key="frame" x="0.0" y="90.5" width="382" height="36"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nfl-67-bf0">
-                                                        <rect key="frame" x="0.0" y="174" width="382" height="49.5"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Telefono Contacto" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nfl-67-bf0">
+                                                        <rect key="frame" x="0.0" y="135.5" width="382" height="36"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RdS-R4-f5z">
-                                                        <rect key="frame" x="0.0" y="232.5" width="382" height="49"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kF0-wP-2ze">
-                                                        <rect key="frame" x="0.0" y="290.5" width="382" height="49"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Correo Contacto" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RdS-R4-f5z">
+                                                        <rect key="frame" x="0.0" y="180.5" width="382" height="36.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="9KD-Mk-TMd">
-                                                        <rect key="frame" x="83" y="348.5" width="216" height="49"/>
+                                                        <rect key="frame" x="164" y="226" width="54" height="36"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rx3-9E-osQ">
-                                                                <rect key="frame" x="0.0" y="0.0" width="54" height="49"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="54" height="36"/>
                                                                 <state key="normal" title="Aceptar"/>
                                                                 <connections>
-                                                                    <segue destination="Bkg-XW-GkZ" kind="show" identifier="Aceptar" id="4QO-Ho-dep"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mmp-ac-Z3s">
-                                                                <rect key="frame" x="154" y="0.0" width="62" height="49"/>
-                                                                <state key="normal" title="Regresar"/>
-                                                                <connections>
-                                                                    <segue destination="Bkg-XW-GkZ" kind="show" identifier="regresar" id="Aab-eY-3TS"/>
+                                                                    <action selector="btnAceptar:" destination="fPY-zQ-FVj" eventType="touchUpInside" id="hWJ-Mo-XOt"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTU-t1-SNb">
+                                                        <rect key="frame" x="136" y="271" width="110" height="36"/>
+                                                        <state key="normal" title="Borrar Contacto"/>
+                                                        <connections>
+                                                            <action selector="btnBorrar:" destination="fPY-zQ-FVj" eventType="touchUpInside" id="etM-xa-Eam"/>
+                                                        </connections>
+                                                    </button>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="idcontacto" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UVA-qp-nsx">
+                                                        <rect key="frame" x="142.5" y="316" width="97" height="36.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKi-gG-GE0">
+                                                        <rect key="frame" x="170" y="361.5" width="42" height="36"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="kF0-wP-2ze" firstAttribute="top" secondItem="RdS-R4-f5z" secondAttribute="bottom" constant="9" id="2PU-St-gNw"/>
                                                     <constraint firstItem="bJe-N7-29u" firstAttribute="leading" secondItem="i1n-e3-bDd" secondAttribute="leading" id="2bp-oW-nPA"/>
-                                                    <constraint firstAttribute="trailing" secondItem="kF0-wP-2ze" secondAttribute="trailing" id="44d-J5-qRx"/>
                                                     <constraint firstAttribute="trailing" secondItem="nfl-67-bf0" secondAttribute="trailing" id="7yG-I3-YTT"/>
-                                                    <constraint firstItem="kF0-wP-2ze" firstAttribute="leading" secondItem="i1n-e3-bDd" secondAttribute="leading" id="8Sj-wD-VRa"/>
                                                     <constraint firstItem="RdS-R4-f5z" firstAttribute="top" secondItem="nfl-67-bf0" secondAttribute="bottom" constant="9" id="8im-rB-h5o"/>
                                                     <constraint firstItem="nfl-67-bf0" firstAttribute="leading" secondItem="i1n-e3-bDd" secondAttribute="leading" id="AG9-D2-pIQ"/>
                                                     <constraint firstItem="bJe-N7-29u" firstAttribute="top" secondItem="0RC-uD-qJQ" secondAttribute="bottom" constant="9" id="LY9-c9-OoC"/>
@@ -397,15 +419,26 @@
                         <viewLayoutGuide key="safeArea" id="tMv-aF-ptS"/>
                     </view>
                     <navigationItem key="navigationItem" id="yuL-os-4z1"/>
+                    <connections>
+                        <outlet property="txtcelContacto" destination="5f5-x6-9AG" id="v0g-j2-QY5"/>
+                        <outlet property="txtcorrUsr" destination="kKi-gG-GE0" id="r9Q-Px-vzL"/>
+                        <outlet property="txtcorreoContacto" destination="RdS-R4-f5z" id="329-nA-f9U"/>
+                        <outlet property="txtidContacto" destination="UVA-qp-nsx" id="ElZ-mR-Xya"/>
+                        <outlet property="txtnomContacto" destination="bJe-N7-29u" id="TEW-vs-kHE"/>
+                        <outlet property="txttelContacto" destination="nfl-67-bf0" id="itG-gh-jaN"/>
+                        <segue destination="Bkg-XW-GkZ" kind="show" identifier="contactagreg" id="Bei-Pj-woy"/>
+                        <segue destination="Bkg-XW-GkZ" kind="show" identifier="contactoactual" id="qGP-jR-BGi"/>
+                        <segue destination="Bkg-XW-GkZ" kind="show" identifier="deleteCon" id="0w9-8k-gBl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v3D-aN-9gO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="300" y="-710"/>
+            <point key="canvasLocation" x="729" y="-739"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gK1-ln-RuQ"/>
-        <segue reference="Aab-eY-3TS"/>
+        <segue reference="92e-ru-fYA"/>
+        <segue reference="Bei-Pj-woy"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="phone-cell-icon-vector-illustration" width="490" height="490"/>
