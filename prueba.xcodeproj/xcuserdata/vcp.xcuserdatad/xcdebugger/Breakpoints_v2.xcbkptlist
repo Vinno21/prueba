@@ -3,4 +3,22 @@
    uuid = "53C61BA6-BD42-4AD1-ABBF-56814EF917E0"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B887488A-9E7A-45D4-9FC7-5605E6D9FC1B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../../var/folders/hk/08hbfdjd25jg3k30r582tvvw0000gn/T/113BED15-6FEE-49BC-BDDC-42AA559815B4/ViewControllerInicio.swift/prueba/ViewControllerInicio.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "ViewControllerInicio"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

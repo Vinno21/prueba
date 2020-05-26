@@ -22,18 +22,46 @@ class ViewController: UIViewController {
     @IBOutlet weak var txtidContacto: UITextField!
     @IBOutlet weak var txtcorrUsr: UILabel!
     var corrusr = ""
+    
+    
+    @IBAction func btnLlamada(_ sender: UIButton) {
+        
+        let cel = txtcelContacto.text
+        let tel = txttelContacto.text
+        if cel == "" {}
+        if tel == "" {}
+        
+        if cel != "" {
+            if let url = URL(string: "tel://" + cel!),
+            UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        
+        
+        }
+    
+    }
+    
+    
+    
     @IBAction func btnAceptar(_ sender: UIButton) {
         
         let idcon = txtidContacto.text
         let nomcon = txtnomContacto.text
         let celcon = txtcelContacto.text
-        let telcon = txttelContacto.text
+        var telcon = txttelContacto.text
         corrusr = txtcorrUsr.text!
-        let corrcon = txtcorreoContacto.text
+        var corrcon = txtcorreoContacto.text
         
         //La siguiente condicion checa que las cajas de texto no esten vacias
         if txtnomContacto.hasText != false && txtcelContacto.hasText != false{
             if txtidContacto.text == ""{ //Si el idContacto esta vacio el codigo de adentro agrega si no actualiza
+                if telcon == "" {
+                    telcon = "0"
+                }
+                if corrcon == "" {
+                    corrcon = "Sin correo"
+                }
                 
                 
                 //Checamos que la base de datos exista para abrirla
@@ -86,6 +114,7 @@ class ViewController: UIViewController {
                     DispatchQueue.main.async {
                         let diccionario_datos = array_respuesta?.object(at: 0) as! NSDictionary
                         //ahora ya podemos acceder a cada valor por medio de su key "forKey"
+                        
                         if let suc = diccionario_datos.object(forKey: "success") as! String?{
                             if(suc == "200"){
                                 print("insertado en la BD JSON")
@@ -93,6 +122,9 @@ class ViewController: UIViewController {
                         }else{
                             self.showAlerta(Titulo: "Error", Mensaje: "Error al insertar")
                         }
+                        
+                        
+                        
                     }
                 }
                 self.performSegue(withIdentifier: "contactagreg", sender: self)
@@ -166,6 +198,7 @@ class ViewController: UIViewController {
             txtcelContacto.text = cont?.celularContacto
             txttelContacto.text = cont?.telefonoContacto
             txtidContacto.text = cont?.idContacto
+            navigationController?.setNavigationBarHidden(false, animated: true)
         }
         
     }

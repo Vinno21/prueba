@@ -8,6 +8,8 @@
 
 import UIKit
 import SQLite3
+ 
+
 
 class TableViewController: UITableViewController {
     var correo = ""
@@ -23,8 +25,24 @@ class TableViewController: UITableViewController {
         
     }
     
+    
+    
+    @IBAction func btnAdd1(_ sender: UIBarButtonItem) {
+        
+        self.performSegue(withIdentifier: "segueAgregarCon", sender: self)
+        
+    }
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        _ = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        
+        navigationController?.setNavigationBarHidden(true, animated: true)
         //Busca la BD y si no encuentra crea la BD
         let fileUrl = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("BDSQLiteAppContactos.sqlite")
         
